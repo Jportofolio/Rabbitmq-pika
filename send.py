@@ -1,11 +1,8 @@
-
 #!/usr/bin/env python
 
-import pika
+from connection import local_host_connection
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
-channel = connection.channel()
-
+channel = local_host_connection()
 channel.queue_declare(queue='hello')
 
 channel.basic_publish(exchange='',
