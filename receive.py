@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from connection import local_host_connection
+from connection import create_channel
 
-channel = local_host_connection()
+channel = create_channel()
 
 channel.queue_declare(queue='hello')
 
